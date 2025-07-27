@@ -403,35 +403,37 @@ The Admin API provides user management and system administration capabilities. I
 
 | Endpoint | Method | Description | Parameters |
 |----------|--------|-------------|------------|
-| `/users/` | POST | Create a new user | `email`, `name`, `token_validity_hours` |
-| `/users/list` | GET | List all users | `limit`, `skip` |
-| `/users/{user_id}` | GET | Get user details | `user_id` |
-| `/users/{user_id}` | DELETE | Delete a user | `user_id` |
-| `/users/{user_id}/refresh-token` | POST | Refresh user's token | `user_id`, `token_validity_hours` |
-| `/users/{user_id}/history` | GET | Get user's question history | `user_id`, `limit` |
-| `/users/by-email/{email}` | GET | Find user by email | `email` |
-| `/users/{user_id}/add-qa` | POST | Add Q&A to user history | `user_id`, `question`, `answer` |
-| `/users/stats/overview` | GET | Get system statistics | None |
+| `/admin/users/` | POST | Create a new user | `email`, `name`, `token_validity_hours` |
+| `/admin/users/list` | GET | List all users | `limit`, `skip` |
+| `/admin/users/{user_id}` | GET | Get user details | `user_id` |
+| `/admin/users/{user_id}` | DELETE | Delete a user | `user_id` |
+| `/admin/users/{user_id}/refresh-token` | POST | Refresh user's token | `user_id`, `token_validity_hours` |
+| `/admin/users/{user_id}/history` | GET | Get user's question history | `user_id`, `limit` |
+| `/admin/users/by-email/{email}` | GET | Find user by email | `email` |
+| `/admin/users/{user_id}/add-qa` | POST | Add Q&A to user history | `user_id`, `question`, `answer` |
+| `/admin/users/stats/overview` | GET | Get system statistics | None |
 
 **User-Facing Endpoints (with token):**
 
 | Endpoint | Method | Description | Parameters |
 |----------|--------|-------------|------------|
-| `/users/me` | GET | Get current user profile | None |
-| `/users/me/history` | GET | Get current user's history | `limit` |
-| `/users/me/refresh-token` | POST | Refresh current user's token | `token_validity_hours` |
-| `/users/validate-token` | POST | Validate a token | None |
+| `/admin/users/me` | GET | Get current user profile | None |
+| `/admin/users/me/history` | GET | Get current user's history | `limit` |
+| `/admin/users/me/refresh-token` | POST | Refresh current user's token | `token_validity_hours` |
+| `/admin/users/me` | PUT | Update current user's profile | `name` |
+| `/admin/users/me` | DELETE | Delete current user's account | None |
+| `/admin/users/validate-token` | POST | Validate a token | None |
 
 **Example Requests:**
 
 ```bash
 # Create a new user
-curl -X POST "http://localhost:8001/users/" \
+curl -X POST "http://localhost:8001/admin/users/" \
   -H "Content-Type: application/json" \
   -d '{"email": "user@example.com", "name": "Example User", "token_validity_hours": 24}'
 
 # List all users
-curl -X GET "http://localhost:8001/users/list?limit=10&skip=0"
+curl -X GET "http://localhost:8001/admin/users/list?limit=10&skip=0"
 ```
 
 Both APIs provide comprehensive OpenAPI documentation accessible at `/docs` when the services are running.
