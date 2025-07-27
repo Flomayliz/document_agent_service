@@ -15,15 +15,15 @@ if ! command -v docker &> /dev/null; then
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-else
-    echo "Docker is already installed."
-
+    
     sudo groupadd docker
     sudo usermod -aG docker $USER
 
     echo "----------------------------------------------------------------------------------------"
     echo "You may need to log out and back in for the group changes to take effect !!!!"
     echo "----------------------------------------------------------------------------------------"
+else
+    echo "Docker is already installed."
 fi
 
 # Start Docker service if not running

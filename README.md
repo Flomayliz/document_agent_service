@@ -39,7 +39,7 @@ cd document_agent_service
 
 # Install docker (if required)
 chmod +x ./scripts/setup_docker_env.sh
-./scripts/setup_docker_env.sh
+./scripts/setup_docker_env.sh # This will require to logout/login!
 
 # Configure environment variables
 cp .env.template .env

@@ -15,10 +15,13 @@ WORKDIR /project
 RUN pip install -U pip setuptools wheel
 RUN pip install pdm pdm-dockerize
 
-RUN --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    --mount=type=bind,source=pdm.lock,target=pdm.lock \
-    --mount=type=cache,target=$HOME/.cache \
-    pdm dockerize --prod -v
+# Copy project files for dependency resolution
+COPY pyproject.toml ./
+COPY app/ ./app/
+
+# Generate lock file and install dependencies
+RUN pdm lock -v
+RUN pdm dockerize --prod -v
 
 ##
 # Run stage: create the final runtime container
@@ -33,4 +36,3 @@ COPY --from=builder /project/dist/docker /app
 COPY  . /app
 
 ENTRYPOINT ["/app/entrypoint"]
-CMD ["your-default-command"]
