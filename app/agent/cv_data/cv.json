@@ -1,0 +1,107 @@
+{
+    "name": "Leslie Ricardo de la Rosa",
+    "title": "Data Scientist & MLOps Engineer",
+    "contact": {
+      "location": "Moralzarzal, Madrid, Spain",
+      "phone": "+34 645 471 882",
+      "email": "leslie_ricardo@hotmail.com",
+      "github": "https://github.com/Flomayliz",
+      "linkedin": "https://www.linkedin.com/in/leslie-ricardo-de-la-rosa"
+    },
+    "summary": "Data Scientist and Machine-Learning Engineer with a Master’s in Big Data & Data Science, Physics background and deep expertise in MLOps. Passionate about building robust, scalable AI systems that turn data into business value.",
+    "languages": [
+      { "language": "Spanish", "proficiency": "Native" },
+      { "language": "English", "proficiency": "B2 – Intermediate" }
+    ],
+    "skills": {
+      "programming":       ["Python", "SQL", "R", "Bash", "C"],
+      "machine_learning":  ["Scikit-learn", "TensorFlow", "PyTorch", "Keras", "XGBoost", "Spark", "PySpark"],
+      "data_engineering":  ["Apache Spark", "Apache NiFi", "Hadoop", "ETL", "Data Pipelines"],
+      "mlops_devops":      ["Docker", "CI/CD", "AWS", "GCP", "Azure", "MLflow", "Kubeflow", "Kubernetes", "GitHub Actions", "DVC"],
+      "databases":         ["MySQL", "MongoDB", "Neo4j", "Cassandra", "Redis"],
+      "visualization":     ["Tableau", "Power BI", "Cognos Analytics", "Matplotlib", "Seaborn"],
+      "nlp_llm":           ["Transformers", "Hugging Face", "GPT-4/3.5", "Llama 3", "RAG", "LangChain"],
+      "tools":             ["Jupyter", "Git", "Linux", "Windows"],
+      "soft_skills":       ["Teamwork", "Agile/Scrum", "Communication", "Problem-solving"]
+    },
+    "experience": [
+      {
+        "title": "MLOps & Machine Learning Engineer",
+        "company": "Invofox (YC S22)",
+        "location": "Remote",
+        "start_date": "2024-04",
+        "end_date": null,
+        "responsibilities": [
+          "Built and maintained cloud-native infrastructure and CI/CD pipelines enabling zero-downtime deployments.",
+          "Designed and optimized LLM-based document-processing models (OpenAI, Hugging Face Transformers).",
+          "Managed multi-cloud resources (AWS, GCP, Azure) and MongoDB for high-volume data pipelines.",
+          "Established MLOps best practices—model versioning, monitoring and automated retraining."
+        ]
+      },
+      {
+        "title": "Data Analytics & AI Consultant",
+        "company": "Singular Beacon",
+        "location": "Madrid, Spain",
+        "start_date": "2024-02",
+        "end_date": "2024-04",
+        "responsibilities": [
+          "Containerized ML workflows and deployed them on Azure, cutting release times by 40 %.",
+          "Migrated n8n automation suite to Azure Container Instances, reducing infrastructure cost 30 %.",
+          "Developed interactive Power BI dashboards to optimize solar-energy efficiency."
+        ]
+      },
+      {
+        "title": "Research Assistant",
+        "company": "Universidad Complutense de Madrid",
+        "location": "Madrid, Spain",
+        "start_date": "2022-09",
+        "end_date": "2023-09",
+        "responsibilities": [
+          "Developed electro-dialysis optimization models using response-surface methodology.",
+          "Co-authored peer-reviewed research on nanofiber membranes for desalination."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "M.Sc. Big Data & Data Science",
+        "institution": "Universidad Autónoma de Madrid",
+        "location": "Madrid, Spain",
+        "graduation_year": 2023
+      },
+      {
+        "degree": "M.Sc. Energy",
+        "institution": "Universidad Complutense de Madrid",
+        "location": "Madrid, Spain",
+        "years": "2022-2023"
+      },
+      {
+        "degree": "B.Sc. Physics",
+        "institution": "Universidad Complutense de Madrid",
+        "location": "Madrid, Spain",
+        "years": "2017-2022"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Wind Power Forecasting Model",
+        "description": "Master’s thesis project—built RNN and SARIMAX models to predict wind-farm power output using meteorological variables (Kelmarsh wind-farm dataset)."
+      }
+    ],
+    "publications": [
+      {
+        "title": "Development of a Lycopodium powder-based superhydrophobic nanofiber membrane suitable for desalination",
+        "journal": "Separation and Purification Technology",
+        "year": 2023,
+        "doi": "10.1016/j.seppur.2023.124405"
+      }
+    ],
+    "certifications": [],
+    "additional_information": {
+      "availability": "Immediate",
+      "work_authorization": "EU Citizen",
+      "interests": ["Renewable Energy", "Autonomous AI Agents", "Open-source Contribution"]
+    },
+    "last_updated": "2025-07-25"
+  }
+  

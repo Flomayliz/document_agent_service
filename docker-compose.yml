@@ -1,0 +1,60 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: llm_doc_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: llm_doc_poc
+
+  api:
+    build: .
+    container_name: llm_doc_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/inbox:/data/inbox
+    command: agent_service
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+    environment:
+      - PDM_USE_VENV=true
+      - PYTHONPATH=/app
+
+  admin_service:
+    build: .
+    container_name: llm_doc_admin
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data/inbox:/data/inbox
+    command: admin_service
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+    environment:
+      - PDM_USE_VENV=true
+      - PYTHONPATH=/app
+
+  watcher:
+    build: .
+    container_name: llm_doc_watcher
+    volumes:
+      - ./data/inbox:/data/inbox
+    command: watcher_service
+    depends_on:
+      - mongo
+      - api
+    env_file:
+      - .env
+    environment:
+      - PDM_USE_VENV=true
+      - PYTHONPATH=/app
+
+volumes:
+  mongo_data:
